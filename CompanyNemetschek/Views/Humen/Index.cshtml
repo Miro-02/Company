@@ -1,0 +1,68 @@
+﻿@model IEnumerable<CompanyNemetschek.Models.Human>
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MStartingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MPosition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MAdress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MSalary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MStartingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MPosition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MAdress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MSalary)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
